@@ -1,0 +1,66 @@
+form 
+ - form : action - 데이타가 전송될 URL, method - GET/POST
+ - input : name: key / value: value
+ - label : for 옵션  input 에 id값이랑 매치
+
+GET
+ - data가 body 통한게 아니라 쿼리스트링
+ - 데이터를 조회할때 
+
+실습 : ARTII
+
+목표 : 
+1.입력한 Text를 artii api 를 이용하여 화면에 출력
+
+  - 텍스트를 입력받기 위해서 form 필요
+  - 입력한 form data를 받아서 artii에 요청
+     - requests 모듈을 이용할 것임
+     - pip install requests
+     - import requests
+       - requests.get("요청할 곳에 URL")
+       - 요청할 URL 분석 (http://artii.herokuapp.com/make?text=)
+       - requests 로 받은 값을 그대로 html 에 보여주면
+
+2. font를 랜덤하게 설정해서 출력
+
+
+POST
+ - 디비를 생성/변경 할때 주로 사용하고 html body 정보를 담아 전송
+ - 원칙적으로 POST요청은 html 파일로 응답하면 안됨. 
+    - post 요청이 오면 get 요청 받는 페이지로 redirect (RESTful) 
+ - Django는 post data 를 그냥 보내지 않는다.
+    - csrf_token
+    - Cross Site Request Forgery
+    - 토큰을 보내지 않으면
+      - 403 forbidden error 
+
+실습 : 
+1. Subway 폼을 POST로 보내서 주문결과를 보여주기
+
+
+Static File 
+
+{% load static %} 라고 html 최상단에 추가
+{% static '파일경로'%}  파일 경로는 app폴더 아래 static 폴더로 관리가됨.
+(templates 와 비슷)
+
+url 분리
+
+templates name space
+
+템플릿 상속 (확장)
+1. TEMPLATES 설정 안에 
+DIRS : [os.path.join(BASE_DIR, "프로젝트 셋팅즈있는 폴더명", "templates")]
+
+2. 프로젝트 셋팅즈 폴더명/templates/base.html 작성을 합니다.
+ {%block (블럭이름) %} {% endblock %}을 html 파일안 원하는 곳에 둔다.
+
+3. 만들어진 base.html 을 상속하려면
+html 상단에 
+{% extends 'base.html' %}
+{% block (블럭이름)%} 
+내용을 기술하면 됨. 
+{% endblock %}
+
+
+
