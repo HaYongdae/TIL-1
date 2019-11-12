@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+<!-- Static file 사용하기 -->
+{% load static %}
+
+{% block title %} 펭수 {% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'stylesheets/pages/style.css'%}">
+{% endblock %}
+
+{% block content %}
+    <h1>Static 파일 실습</h1>
+    <!-- 이미지 파일 적용 방법 -->
+    <img src="{% static 'images/pages/peng.jpg'%}" alt="펭수">
+{% endblock %}
