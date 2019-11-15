@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Article List</h1>
+<ol>
+    {% for arti in articles %}
+    <li><a href="/{{arti.id}}/detail/">{{arti.title}}</a></li>
+    {% endfor %}
+</ol>
+{% endblock %}

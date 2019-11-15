@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+제목 : {{ art.title }} <br>
+내용 : {{ art.content }} <br>
+
+<a href="/{{art.id}}/update/">수정하기</a>
+<a href="/{{art.id}}/delete/">삭제하기</a>
+{% endblock %}

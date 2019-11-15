@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+    <!-- 작성할 폼 생성 -->
+    <form action='/crud/create/' method='POST'>
+        {% csrf_token %}
+        <label for="title">기사 제목</label>
+        <input type="text" name="title" id="title"><br>
+        <textarea name="content" cols="30" rows="5"></textarea>
+        <br><input type='submit'>
+    </form>
+{% endblock %}
