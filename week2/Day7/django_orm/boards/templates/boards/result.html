@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <ul>
+    <!-- result 는 쿼리셋형태로 전달됨(즉 리스트 모양) -->
+    <!-- Subway의 인스턴스 클래스들이 리스트에 전달되어짐 -->
+    {% for res in result %}
+    <!-- res 는 Subway의 인스턴스 -->
+        <li>이름 : {{ res.name }}</li>
+        <li>날짜 : {{ res.date }}</li>
+        <li>빵 : {{ res.bread }}</li>
+        <li>소스 : {{ res.sauce }}</li>
+        <hr>
+    {% endfor %}
+    </ul>
+{% endblock %}
