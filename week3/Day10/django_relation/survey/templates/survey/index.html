@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h1>질문 LIST</h1>
+    <ul>
+        {% for q in questions %}
+            <li><a href="{% url 'survey:detail' q.id %}">{{ q.question }}</a></li>
+        {% empty %}
+        <h2>질문 등록이 필요해요.</h2>
+        {% endfor %}
+    </ul>
+{% endblock %}

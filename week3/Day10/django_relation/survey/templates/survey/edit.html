@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block body %}
+<!-- action이 비어있는 경우 현재 경로로 요청하게됨. -->
+<form action='' method='POST'>
+    {% csrf_token %}
+    <input type="text" name="question" value="{{ question.question }}">
+    <input type='submit'>
+</form>
+{% endblock %}

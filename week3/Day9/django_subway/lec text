@@ -82,11 +82,11 @@ POST /boards
 
 GET /boards/1/update ( REST X)
 PUT /boards/1
-POST /boards/1/edit (django)
+POST /boards/1/edit/ (django)
 
 GET /boards/1/delete ( REST X)
 DELETE /boards/1
-POST /boards/1/delete (django)
+POST /boards/1/delete/ (django)
 
 Django 에서는 Http method 를 GET/POST
 
