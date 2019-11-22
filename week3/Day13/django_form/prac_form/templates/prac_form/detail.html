@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body %}
+    NAME:{{ book.name }} <br>
+    PREFACE: {{ book.preface}} <br>
+    <a href="{% url 'prac:edit' book.id %}">수정하기</a>
+    <form action='{% url "prac:del" book.id %}' method='POST'>
+        {% csrf_token %}
+        <a href="#" onclick="this.parentNode.submit()">삭제하기</a>
+    </form>
+{% endblock %}

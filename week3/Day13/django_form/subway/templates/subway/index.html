@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h1>LIST</h1>
+    <ul>
+        {% for subway in subways %}
+        <li><a href="{% url 'subway:detail' subway.id %}">{{subway.name}}</a>  </li>
+        {% endfor %}
+    </ul>
+    <hr><br>
+    <a href="{% url 'subway:new' %}">NEW</a>
+{% endblock %}

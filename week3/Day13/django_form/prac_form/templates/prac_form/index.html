@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h1>Index Page</h1>
+    <ul>
+        {% for book in books %}
+        <li><a href="{% url 'prac:detail' book.id %}">{{ book.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'prac:new' %}">NEW</a>
+
+{% endblock %}

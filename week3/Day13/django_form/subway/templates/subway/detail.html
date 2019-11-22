@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+    이름 : {{ subway.name }} <br>
+    주소 : {{ subway.address }} <br>
+    메뉴 : {{ subway.menu }} <br>
+    빵 : {{ subway.bread }} <br>
+    채소 : {{ subway.vegetable }} <br>
+    소스 : {{ subway.sauce }} <br>
+    음료 : {{ subway.drink }} <br>
+
+<a href="{% url 'subway:edit' subway.id %}">수정하기</a>
+<form action='{% url 'subway:delete' subway.id %}' method='POST'>
+    {% csrf_token %}
+    <a href="#" onclick="this.parentNode.submit()">삭제하기</a>
+</form>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+    <!-- new/ -->
+    <form action='' method='POST'>
+        {% csrf_token %}
+        <!-- TITLE : <input type="text" name="title"><br>
+        CONTENT : <br>
+        <textarea name="content" cols="30" rows="5"></textarea> -->
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type='submit'>
+    </form>
+{% endblock %}
