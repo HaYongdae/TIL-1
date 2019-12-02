@@ -52,7 +52,7 @@ def logout(request):
 
 @login_required
 def edit(request):
-    print(request.user)
+   
     if request.method == "POST":
         form = UserCustomChangeForm(request.POST, instance=request.user)
         if form.is_valid():
